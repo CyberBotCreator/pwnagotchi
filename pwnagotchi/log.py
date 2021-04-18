@@ -7,7 +7,6 @@ import shutil
 import gzip
 import warnings
 from datetime import datetime
-
 from pwnagotchi.voice import Voice
 from pwnagotchi.mesh.peer import Peer
 from file_read_backwards import FileReadBackwards
@@ -100,6 +99,7 @@ class LastSession(object):
                     started_at = stopped_at
 
                 if LastSession.DEAUTH_TOKEN in line and line not in cache:
+                    #checking if deauth_token is present in cache if deauthed then increment by 1
                     self.deauthed += 1
                     cache[line] = 1
 
